@@ -16,7 +16,7 @@ const Content = styled('div')`
 
 export const Header = () => {
   return (
-    <Wrapper>
+    <Wrapper position="sticky">
       <Container maxWidth="xl">
         <Content>
           <Link to={ROUTES.home}>
