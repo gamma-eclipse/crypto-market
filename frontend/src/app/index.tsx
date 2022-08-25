@@ -1,9 +1,14 @@
+import { Routing } from 'pages';
 import React from 'react';
 
 import { WithProvider } from './withProvider';
 
 const App = () => {
-  return <WithProvider>app</WithProvider>;
+  return (
+    <WithProvider>
+      <Routing />
+    </WithProvider>
+  );
 };
 
 export default App;
