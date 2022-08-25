@@ -1,30 +1,30 @@
-import { styled } from '@mui/material';
-import React from 'react';
+import { AppBar, Container, styled } from '@mui/material';
+import { ReactComponent as LogoLight } from 'assets/logo-light.svg';
 import { Link } from 'react-router-dom';
-import { routes } from 'shared/routes';
+import { COLORS } from 'shared/colors';
+import { ROUTES } from 'shared/routes';
 
-const Wrapper = styled('header')`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+import { Navigation } from './Navigation';
+
+const Wrapper = styled(AppBar)`
+  background-color: ${COLORS[500]};
 `;
 
-const Nav = styled('nav')`
-  display: grid;
-  grid-gap: 15px;
-  grid-auto-flow: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
+const Content = styled('div')`
+  display: flex;
 `;
 
 export const Header = () => {
   return (
     <Wrapper>
-      <Nav>
-        <Link to={routes.home}>Home</Link>
-        <Link to={routes.cart}>Cart</Link>
-      </Nav>
+      <Container maxWidth="xl">
+        <Content>
+          <Link to={ROUTES.home}>
+            <LogoLight width="50" height="50" />
+          </Link>
+          <Navigation />
+        </Content>
+      </Container>
     </Wrapper>
   );
 };
