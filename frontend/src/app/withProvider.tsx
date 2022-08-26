@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { theme } from 'shared/theme';
+import { theme } from 'shared/config/theme';
 
 type WithProviderProps = React.PropsWithChildren;
 

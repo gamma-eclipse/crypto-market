@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import { COLORS } from 'shared/colors';
-import { ROUTES } from 'shared/routes';
+import { COLORS } from 'shared/config/colors';
+import { ROUTES } from 'shared/config/routes';
 
 const Nav = styled('nav')`
   display: grid;

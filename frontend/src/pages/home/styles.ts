@@ -1,5 +1,5 @@
 import { TextField, Typography, styled } from '@mui/material';
-import { COLORS } from 'shared/colors';
+import { COLORS } from 'shared/config/colors';
 
 export const ContentLayout = styled('div')`
   display: grid;
