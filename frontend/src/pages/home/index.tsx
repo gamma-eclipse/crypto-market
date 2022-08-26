@@ -2,7 +2,7 @@ import { IconButton } from '@mui/material';
 import { ReactComponent as SearchIcon } from 'assets/search.svg';
 import { useUnit } from 'effector-react';
 import { $catalogProducts, fetchProducts, fetchProductsFx } from 'entities/catalog';
-import { ProductCard } from 'entities/product';
+import { ProductList } from 'entities/product/ui/ProductList';
 import { useEffect } from 'react';
 import { COLORS } from 'shared/config/colors';
 import { Layout } from 'shared/ui/Layout';
@@ -39,12 +39,8 @@ export const Home = () => {
             }}
           />
         </GridArea>
-        <GridArea name="content" style={{ padding: '5px 10px' }}>
-          {loading ? (
-            <Spinner color={COLORS[500]} style={{ margin: 'auto' }} />
-          ) : (
-            products?.map((product) => <ProductCard key={product.id} product={product} />)
-          )}
+        <GridArea name="content" style={{ padding: '15px' }}>
+          {loading ? <Spinner color={COLORS[500]} style={{ margin: 'auto' }} /> : <ProductList products={products} />}
         </GridArea>
       </ContentLayout>
     </Layout>
