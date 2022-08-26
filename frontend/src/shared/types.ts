@@ -1,6 +1,7 @@
 export type Category = 'block' | 'weapon' | 'armor';
 
 export type ProductView = {
+  id: string;
   name: string;
   shortDescription: string;
   category: Category;
@@ -13,6 +14,5 @@ export type ProductView = {
 export type ProductSpecification = {
   description: string;
   complectation: string;
-  minecraftId: string;
   enchants: { name: string; description: string; level: number }[];
 };
