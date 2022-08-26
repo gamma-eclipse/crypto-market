@@ -17,7 +17,8 @@ export const $isLoading = createStore(false);
 
 $catalogProducts.on(fetchProductsFx.doneData, (_, payload) => payload);
 $isFetched.on(fetchProductsFx.doneData, () => true);
-$isLoading.on(fetchProductsFx.pending, (_, payload) => payload);
+$isLoading.on(fetchProducts, () => true);
+$isLoading.on(fetchProductsFx.done, () => false);
 
 sample({
   clock: fetchProducts,
