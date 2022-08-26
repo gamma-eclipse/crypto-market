@@ -1,7 +1,7 @@
 import { IconButton } from '@mui/material';
 import { ReactComponent as SearchIcon } from 'assets/search.svg';
 import { useUnit } from 'effector-react';
-import { $catalogProducts, $isLoading, fetchProducts, fetchProductsFx } from 'entities/catalog';
+import { $catalogProducts, fetchProducts, fetchProductsFx } from 'entities/catalog';
 import { ProductCard } from 'entities/product';
 import { useEffect } from 'react';
 import { COLORS } from 'shared/config/colors';
@@ -12,7 +12,7 @@ import { ContentLayout, GridArea, Search, Title } from './styles';
 
 export const Home = () => {
   const products = useUnit($catalogProducts);
-  const loading = useUnit($isLoading);
+  const loading = useUnit(fetchProductsFx.pending);
 
   useEffect(() => {
     fetchProducts();

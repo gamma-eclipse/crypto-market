@@ -12,13 +12,8 @@ fetchProductsFx.use(async () => {
 });
 
 export const $catalogProducts = createStore<ProductView[] | null>(null);
-const $isFetched = createStore(false);
-export const $isLoading = createStore(false);
 
 $catalogProducts.on(fetchProductsFx.doneData, (_, payload) => payload);
-$isFetched.on(fetchProductsFx.doneData, () => true);
-$isLoading.on(fetchProducts, () => true);
-$isLoading.on(fetchProductsFx.done, () => false);
 
 sample({
   clock: fetchProducts,
