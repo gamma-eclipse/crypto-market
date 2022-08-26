@@ -16,7 +16,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <Wrapper>
       <Header />
       <main style={{ marginTop: 25 }}>
-        <Container maxWidth="lg">{children}</Container>
+        <Container maxWidth="xl">{children}</Container>
       </main>
       <Footer />
     </Wrapper>
