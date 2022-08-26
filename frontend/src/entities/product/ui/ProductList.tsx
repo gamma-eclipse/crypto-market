@@ -1,5 +1,4 @@
 import { styled } from '@mui/material';
-import React from 'react';
 import { ProductView } from 'shared/types';
 
 import { ProductCard } from './ProductCard';

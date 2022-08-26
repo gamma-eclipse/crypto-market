@@ -39,7 +39,7 @@ export const Home = () => {
             }}
           />
         </GridArea>
-        <GridArea name="content" style={{ padding: '15px' }}>
+        <GridArea name="content" style={{ padding: '20px' }}>
           {loading ? <Spinner color={COLORS[500]} style={{ margin: 'auto' }} /> : <ProductList products={products} />}
         </GridArea>
       </ContentLayout>
