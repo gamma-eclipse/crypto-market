@@ -11,7 +11,7 @@ fetchProductsFx.use(async () => {
   return data;
 });
 
-export const $catalogProducts = createStore<ProductView[] | null>(null);
+export const $catalogProducts = createStore<ProductView[]>([]);
 
 $catalogProducts.on(fetchProductsFx.doneData, (_, payload) => payload);
 
