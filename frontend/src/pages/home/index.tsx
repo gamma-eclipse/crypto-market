@@ -4,7 +4,9 @@ import { useUnit } from 'effector-react';
 import { $catalogProducts, $isLoading, fetchProducts, fetchProductsFx } from 'entities/catalog';
 import { ProductCard } from 'entities/product';
 import { useEffect } from 'react';
+import { COLORS } from 'shared/config/colors';
 import { Layout } from 'shared/ui/Layout';
+import { Spinner } from 'shared/ui/Spinner';
 
 import { ContentLayout, GridArea, Search, Title } from './styles';
 
@@ -37,9 +39,9 @@ export const Home = () => {
             }}
           />
         </GridArea>
-        <GridArea name="content">
+        <GridArea name="content" style={{ padding: '5px 10px' }}>
           {loading ? (
-            <div>loading</div>
+            <Spinner color={COLORS[500]} style={{ margin: 'auto' }} />
           ) : (
             products?.map((product) => <ProductCard key={product.id} product={product} />)
           )}
