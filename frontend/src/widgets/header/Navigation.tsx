@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { COLORS } from 'shared/config/colors';
 import { ROUTES } from 'shared/config/routes';
 
@@ -13,7 +13,7 @@ const Nav = styled('nav')`
   color: ${COLORS[50]};
 `;
 
-const NavLink = styled(Link)`
+const NavLink = styled(Link, { shouldForwardProp: (propName) => propName !== 'active' })<{ active: boolean }>`
   margin-left: 50px;
 
   font-family: 'Silkscreen', cursive;
@@ -30,7 +30,7 @@ const NavLink = styled(Link)`
     bottom: 0;
     transform: translateX(-50%);
     height: 2px;
-    width: 0;
+    width: ${(props) => (props.active ? '100%' : '0')};
     background-color: ${COLORS[50]};
     transition: all 0.3s ease;
   }
@@ -44,9 +44,13 @@ const NavLink = styled(Link)`
 `;
 
 export const Navigation = () => {
+  const location = useLocation();
+
   return (
     <Nav>
-      <NavLink to={ROUTES.cart}>Cart</NavLink>
+      <NavLink to={ROUTES.cart} active={location.pathname.includes(ROUTES.cart)}>
+        Cart
+      </NavLink>
     </Nav>
   );
 };
