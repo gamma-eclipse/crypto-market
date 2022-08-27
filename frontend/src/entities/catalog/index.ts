@@ -1,1 +1,1 @@
-export * from './model';
+export { $catalogProducts, fetchProducts, fetchProductsFx } from './model';
