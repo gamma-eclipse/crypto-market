@@ -1,9 +1,9 @@
-import { Product } from 'shared/types';
+import { IProduct } from 'shared/types';
 
 const MINECRAFT_GRASS_IMAGE_URL =
   'https://w7.pngwing.com/pngs/456/94/png-transparent-minecraft-pocket-edition-computer-icons-desktop-block-angle-video-game-grass.png';
 
-export const productMock: Product = {
+export const productMock: IProduct = {
   id: '20',
   name: 'wooden sword',
   category: 'weapon',
@@ -21,6 +21,12 @@ export const productMock: Product = {
       description: 'Increases damage and shield stunning.',
       level: 3,
       rarity: 3,
+    },
+    {
+      name: 'sharpness',
+      description: 'Increases damage and shield stunning.',
+      level: 5,
+      rarity: 5,
     },
   ],
 };

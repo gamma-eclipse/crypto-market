@@ -1,12 +1,12 @@
 import { createEffect, createEvent, createStore, sample } from 'effector';
 import { mockFetch } from 'shared/helpers';
-import { productMock } from 'shared/mocks/product';
-import { Product } from 'shared/types';
+import { productMock } from 'shared/mocks/productMock';
+import { IProduct } from 'shared/types';
 
 export const fetchProduct = createEvent<string>();
-const fetchProductFx = createEffect<string, Product>();
+const fetchProductFx = createEffect<string, IProduct>();
 
-const $product = createStore<Product | null>(null);
+export const $product = createStore<IProduct | null>(null);
 
 sample({
   clock: fetchProduct,

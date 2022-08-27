@@ -1,6 +1,6 @@
 import { createEffect, createEvent, createStore, sample } from 'effector';
 import { mockFetch } from 'shared/helpers';
-import { productViewsMock } from 'shared/mocks/productsViews';
+import { productViewsMock } from 'shared/mocks/productsViewsMock';
 import { ProductView } from 'shared/types';
 
 export const fetchProducts = createEvent();

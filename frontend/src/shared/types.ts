@@ -12,10 +12,17 @@ export type ProductView = {
   };
 };
 
+export type IEnchant = {
+  name: string;
+  description: string;
+  level: number;
+  rarity: Rarity;
+};
+
 export type ProductSpecification = {
   description: string;
   complectation: string;
-  enchants?: { name: string; description: string; level: number; rarity: Rarity }[];
+  enchants?: IEnchant[];
 };
 
-export type Product = ProductView & ProductSpecification;
+export type IProduct = ProductView & ProductSpecification;
