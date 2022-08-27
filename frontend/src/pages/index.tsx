@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { ROUTES } from 'shared/routes';
+import { ROUTES } from 'shared/config/routes';
 
 import { Cart } from './cart';
 import { Home } from './home';

@@ -1,8 +1,8 @@
 import { AppBar, Container, styled } from '@mui/material';
 import { ReactComponent as LogoLight } from 'assets/logo-light.svg';
 import { Link } from 'react-router-dom';
-import { COLORS } from 'shared/colors';
-import { ROUTES } from 'shared/routes';
+import { COLORS } from 'shared/config/colors';
+import { ROUTES } from 'shared/config/routes';
 
 import { Navigation } from './Navigation';
 
