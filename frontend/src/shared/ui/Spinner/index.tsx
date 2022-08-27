@@ -1,4 +1,5 @@
 import { Box, styled } from '@mui/material';
+import { COLORS } from 'shared/config/colors';
 
 const Wrapper = styled('div')`
   position: relative;
@@ -141,10 +142,10 @@ export const Loader = styled('div', { shouldForwardProp: (propName) => propName 
 
 type SpinnerProps = {
   color?: string;
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
 };
 
-export const Spinner = ({ color = '#000', style }: SpinnerProps) => {
+export const Spinner = ({ color = COLORS[500], style }: SpinnerProps) => {
   return (
     <Wrapper style={style}>
       <Loader color={color} />

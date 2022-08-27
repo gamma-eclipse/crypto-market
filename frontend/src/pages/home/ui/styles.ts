@@ -10,12 +10,6 @@ export const ContentLayout = styled('div')`
     '. content content' 1fr / 300px 2fr 1fr;
 `;
 
-export const GridArea = styled('div', { shouldForwardProp: (propName) => propName !== 'name' })<{ name: string }>`
-  grid-area: ${(props) => props.name};
-  background-color: ${COLORS.bg[100]};
-  border-radius: 7px;
-`;
-
 export const Title = styled(Typography)`
   display: flex;
   justify-content: center;
