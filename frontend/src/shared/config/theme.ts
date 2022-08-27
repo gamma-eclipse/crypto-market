@@ -10,5 +10,8 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: '"Silkscreen", cursive',
+    allVariants: {
+      color: COLORS[900],
+    },
   },
 });
