@@ -1,11 +1,10 @@
 import { Button } from '@mui/material';
+import { addToCart } from 'entities/cart';
 import React from 'react';
 
-import { addToCart } from '../model';
-
-type AddToCartProps = React.PropsWithChildren<{
+type AddToCartProps = {
   productId: string;
-}>;
+};
 
 export const AddToCart = ({ productId }: AddToCartProps) => {
   return (

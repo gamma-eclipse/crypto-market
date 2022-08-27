@@ -2,12 +2,12 @@ import { IconButton } from '@mui/material';
 import { ReactComponent as SearchIcon } from 'assets/search.svg';
 import { useUnit } from 'effector-react';
 import { $catalogProducts, fetchProducts, fetchProductsFx } from 'entities/catalog';
-import { ProductList } from 'entities/product/ui/ProductList';
 import { useEffect } from 'react';
 import { COLORS } from 'shared/config/colors';
 import { Layout } from 'shared/ui/Layout';
 import { Spinner } from 'shared/ui/Spinner';
 
+import { ProductList } from './ProductList';
 import { ContentLayout, GridArea, Search, Title } from './styles';
 
 export const Home = () => {

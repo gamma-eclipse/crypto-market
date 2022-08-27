@@ -16,5 +16,5 @@ export const Description = styled(Typography)`
 `;
 
 export const Price = styled(Typography)`
-  margin-top: 5px;
+  margin: 5px 0;
 `;
