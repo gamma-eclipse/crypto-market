@@ -1,14 +1,15 @@
 import { IconButton } from '@mui/material';
 import { ReactComponent as SearchIcon } from 'assets/search.svg';
 import { useUnit } from 'effector-react';
-import { $catalogProducts, fetchProducts, fetchProductsFx } from 'entities/catalog';
 import { useEffect } from 'react';
 import { COLORS } from 'shared/config/colors';
 import { Layout } from 'shared/ui/Layout';
 import { Spinner } from 'shared/ui/Spinner';
 
+import { GridArea } from '../../../shared/ui/GridArea';
+import { $catalogProducts, fetchProducts, fetchProductsFx } from '../model';
 import { ProductList } from './ProductList';
-import { ContentLayout, GridArea, Search, Title } from './styles';
+import { ContentLayout, Search, Title } from './styles';
 
 export const Home = () => {
   const products = useUnit($catalogProducts);
@@ -40,7 +41,7 @@ export const Home = () => {
           />
         </GridArea>
         <GridArea name="content" style={{ padding: '20px' }}>
-          {loading ? <Spinner color={COLORS[500]} style={{ margin: 'auto' }} /> : <ProductList products={products} />}
+          {loading ? <Spinner style={{ margin: 'auto' }} /> : <ProductList products={products} />}
         </GridArea>
       </ContentLayout>
     </Layout>
