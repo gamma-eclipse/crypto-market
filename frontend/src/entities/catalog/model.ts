@@ -7,7 +7,7 @@ export const fetchProducts = createEvent();
 export const fetchProductsFx = createEffect<void, ProductView[]>();
 
 fetchProductsFx.use(async () => {
-  const data = await mockFetch<ProductView[]>(productViewsMock, 800);
+  const data = await mockFetch(productViewsMock, 800);
   return data;
 });
 
