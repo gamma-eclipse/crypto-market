@@ -20,6 +20,7 @@ export const productMock: Product = {
       name: 'Cleaving',
       description: 'Increases damage and shield stunning.',
       level: 3,
+      rarity: 3,
     },
   ],
 };
