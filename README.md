@@ -1,2 +1,1 @@
-# crypto-market
-React effector solidity dotNET
+## Minecraft items marketplace with crypto payment system
