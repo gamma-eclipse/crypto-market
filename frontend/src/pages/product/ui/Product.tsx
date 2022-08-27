@@ -1,4 +1,4 @@
-import { Typography, styled } from '@mui/material';
+import { Typography } from '@mui/material';
 import { useUnit } from 'effector-react';
 import { Enchantment } from 'entities/product';
 import { AddToCart } from 'features/AddToCart';
@@ -9,41 +9,7 @@ import { Layout } from 'shared/ui/Layout';
 import { Spinner } from 'shared/ui/Spinner';
 
 import { $product, fetchProduct } from '../model';
-
-const Content = styled('div')`
-  display: grid;
-  grid-gap: 15px;
-  padding: 10px 15px;
-`;
-
-const ContentLayout = styled('div')`
-  display: grid;
-  grid-gap: 25px;
-  grid-template:
-    'image content' fit-content(100%)
-    '. content' 1fr / fit-content(100%) 1fr;
-`;
-
-const Payment = styled('div')`
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: flex-start;
-  align-items: center;
-  grid-gap: 25px;
-`;
-
-const Enchants = styled('div')`
-  margin-top: 5px;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: flex-start;
-  grid-gap: 10px;
-`;
-
-const ProductView = styled('div')`
-  max-width: 450px;
-  padding: 15px;
-`;
+import { Content, ContentLayout, Enchants, Payment, ProductView } from './styles';
 
 export const Product = () => {
   const { id } = useParams();
