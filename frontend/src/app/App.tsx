@@ -1,15 +1,13 @@
-import { Routing } from 'pages';
+import { Routing } from 'pages/Routing';
 import React from 'react';
 
 import { WithProvider } from './WithProvider';
 import './styles/reset.css';
 
-const App = () => {
+export const App = () => {
   return (
     <WithProvider>
       <Routing />
     </WithProvider>
   );
 };
-
-export default App;

@@ -1,4 +1,4 @@
-import { Container, styled } from '@mui/material';
+import { Container as MUIContainer, styled } from '@mui/material';
 import React from 'react';
 import { Footer } from 'widgets/footer';
 import { Header } from 'widgets/header';
@@ -11,13 +11,23 @@ const Wrapper = styled('div')`
   min-height: 100vh;
 `;
 
+const Main = styled('main')`
+  margin-top: 25px;
+  display: flex;
+  flex: 1 0 100%;
+`;
+
+const Container = styled(MUIContainer)`
+  flex: 1 0 100%;
+`;
+
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <Wrapper>
       <Header />
-      <main style={{ marginTop: 25 }}>
+      <Main>
         <Container maxWidth="xl">{children}</Container>
-      </main>
+      </Main>
       <Footer />
     </Wrapper>
   );
