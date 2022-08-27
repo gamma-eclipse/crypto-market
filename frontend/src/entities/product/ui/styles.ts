@@ -18,3 +18,11 @@ export const Description = styled(Typography)`
 export const Price = styled(Typography)`
   margin: 5px 0;
 `;
+
+export const Title = styled(Typography)`
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: ${COLORS[700]};
+  }
+` as typeof Typography;
