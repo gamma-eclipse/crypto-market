@@ -33,7 +33,7 @@ export const Home = () => {
             InputProps={{
               endAdornment: (
                 <IconButton>
-                  <SearchIcon />
+                  <SearchIcon fill={COLORS[500]} />
                 </IconButton>
               ),
             }}

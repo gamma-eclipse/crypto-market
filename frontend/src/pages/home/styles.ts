@@ -28,8 +28,4 @@ export const Search = styled(TextField)`
     border-width: 3px !important;
     border-color: ${COLORS[500]} !important;
   }
-
-  svg {
-    fill: inherit;
-  }
 `;
