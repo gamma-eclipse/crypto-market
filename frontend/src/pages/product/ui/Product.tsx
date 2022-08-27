@@ -20,7 +20,7 @@ const ContentLayout = styled('div')`
   display: grid;
   grid-gap: 25px;
   grid-template:
-    'slider content' fit-content(100%)
+    'image content' fit-content(100%)
     '. content' 1fr / fit-content(100%) 1fr;
 `;
 
@@ -40,6 +40,11 @@ const Enchants = styled('div')`
   grid-gap: 10px;
 `;
 
+const ProductView = styled('div')`
+  max-width: 450px;
+  padding: 15px;
+`;
+
 export const Product = () => {
   const { id } = useParams();
   const product = useUnit($product);
@@ -51,6 +56,9 @@ export const Product = () => {
   return (
     <Layout>
       <ContentLayout>
+        <GridArea name="image">
+          <ProductView>{product && <img src={product.image.url} alt={product.name} />}</ProductView>
+        </GridArea>
         <GridArea name="content">
           {product ? (
             <Content>

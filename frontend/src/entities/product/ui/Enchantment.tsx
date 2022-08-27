@@ -10,7 +10,7 @@ type EnchantmentProps = {
 
 export const Enchantment = ({ enchant }: EnchantmentProps) => {
   return (
-    <Tooltip title={enchant.description} followCursor enterDelay={50} leaveDelay={100} TransitionComponent={Zoom}>
+    <Tooltip title={enchant.description} enterDelay={50} leaveDelay={100} TransitionComponent={Zoom}>
       <Chip
         label={`${enchant.name} ${romanizeEnchantmentLevel(enchant.level)}`}
         style={{
