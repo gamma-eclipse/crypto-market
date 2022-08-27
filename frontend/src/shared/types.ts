@@ -14,5 +14,7 @@ export type ProductView = {
 export type ProductSpecification = {
   description: string;
   complectation: string;
-  enchants: { name: string; description: string; level: number }[];
+  enchants?: { name: string; description: string; level: number }[];
 };
+
+export type Product = ProductView & ProductSpecification;
