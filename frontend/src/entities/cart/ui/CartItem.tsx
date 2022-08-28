@@ -12,11 +12,15 @@ const Wrapper = styled('div')`
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: fit-content(100%) minmax(150px, 250px) fit-content(100%);
-  grid-gap: 20px;
+  grid-gap: 15px;
 
   background-color: ${COLORS.bg[200]};
   border-radius: 7px;
   padding: 15px;
+`;
+
+export const ForCheckout = styled(Checkbox)`
+  align-self: flex-start;
 `;
 
 const CartItemContent = styled('div')`
@@ -36,7 +40,7 @@ const Amount = styled('div')`
 export const CartItem = ({ product }: CartItemProps) => {
   return (
     <Wrapper>
-      <Checkbox style={{ alignSelf: 'flex-start' }} />
+      <ForCheckout />
       <img src={product.image.url} alt={product.name} />
       <CartItemContent>
         <Typography fontSize={20}>{product.name}</Typography>
