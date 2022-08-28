@@ -24,10 +24,8 @@ export const ForCheckout = styled(Checkbox)`
   align-self: flex-start;
 `;
 
-const CartItemContent = styled('div')`
-  display: grid;
-  grid-gap: 15px;
-  grid-auto-rows: fit-content(100%);
+const Price = styled(Typography)`
+  margin: 10px 0 17px;
 `;
 
 export const CartItem = ({ product }: CartItemProps) => {
@@ -35,11 +33,11 @@ export const CartItem = ({ product }: CartItemProps) => {
     <Wrapper>
       <ForCheckout />
       <img src={product.image.url} alt={product.name} />
-      <CartItemContent>
+      <div>
         <Typography fontSize={20}>{product.name}</Typography>
-        <Typography>${product.price}</Typography>
+        <Price>${product.price}</Price>
         <CartItemCount productId={product.id} />
-      </CartItemContent>
+      </div>
     </Wrapper>
   );
 };

@@ -1,5 +1,7 @@
 import { styled } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
+
+import { Count, Less, More } from './styles';
 
 type CartItemCountProps = {
   productId: string;
@@ -8,17 +10,19 @@ type CartItemCountProps = {
 const Amount = styled('div')`
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 25px;
+  grid-gap: 13px;
   justify-content: flex-start;
   align-items: center;
 `;
 
 export const CartItemCount = ({ productId }: CartItemCountProps) => {
+  const [value, setValue] = useState(5);
+
   return (
     <Amount>
-      <div className="less">-</div>
-      <div>5</div>
-      <div className="more">+</div>
+      <Less onClick={() => setValue((v) => (v > 0 ? v - 1 : 0))} />
+      <Count>{value}</Count>
+      <More onClick={() => setValue((v) => (v >= 0 ? v + 1 : 0))} />
     </Amount>
   );
 };
