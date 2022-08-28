@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Checkbox, Typography } from '@mui/material';
+import { CartItemCount } from 'features/CartItemCount';
 import React from 'react';
 import { COLORS } from 'shared/config/colors';
 import { IProductView } from 'shared/types';
@@ -29,14 +30,6 @@ const CartItemContent = styled('div')`
   grid-auto-rows: fit-content(100%);
 `;
 
-const Amount = styled('div')`
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 25px;
-  justify-content: flex-start;
-  align-items: center;
-`;
-
 export const CartItem = ({ product }: CartItemProps) => {
   return (
     <Wrapper>
@@ -45,11 +38,7 @@ export const CartItem = ({ product }: CartItemProps) => {
       <CartItemContent>
         <Typography fontSize={20}>{product.name}</Typography>
         <Typography>${product.price}</Typography>
-        <Amount>
-          <div className="less">-</div>
-          <div>5</div>
-          <div className="more">+</div>
-        </Amount>
+        <CartItemCount productId={product.id} />
       </CartItemContent>
     </Wrapper>
   );
