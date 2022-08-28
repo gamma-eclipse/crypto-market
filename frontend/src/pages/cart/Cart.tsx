@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Checkbox, Typography } from '@mui/material';
 import { useUnit } from 'effector-react';
 import React, { useEffect } from 'react';
+import { COLORS } from 'shared/config/colors';
 import { GridArea } from 'shared/ui/GridArea';
 import { Layout } from 'shared/ui/Layout';
 import { Spinner } from 'shared/ui/Spinner';
@@ -30,6 +31,36 @@ export const ChooseAll = styled('div')`
   padding: 5px 15px;
 `;
 
+const CartList = styled('div')`
+  display: grid;
+  grid-gap: 25px;
+`;
+
+const CartItem = styled('div')`
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: fit-content(100%) minmax(150px, 250px) fit-content(100%);
+  grid-gap: 20px;
+
+  background-color: ${COLORS.bg[200]};
+  border-radius: 7px;
+  padding: 15px;
+`;
+
+const CartItemContent = styled('div')`
+  display: grid;
+  grid-gap: 15px;
+  grid-auto-rows: fit-content(100%);
+`;
+
+const Amount = styled('div')`
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 25px;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
 export const Cart = () => {
   const products = useUnit($products);
   const loading = useUnit(fetchProductsFx.pending);
@@ -55,7 +86,27 @@ export const Cart = () => {
           </ChooseAll>
         </GridArea>
         <GridArea name="content" style={{ padding: '20px' }}>
-          {loading ? <Spinner style={{ margin: 'auto' }} /> : <div>text</div>}
+          {loading ? (
+            <Spinner style={{ margin: 'auto' }} />
+          ) : (
+            <CartList>
+              {products.map((product) => (
+                <CartItem key={product.id}>
+                  <Checkbox style={{ alignSelf: 'flex-start' }} />
+                  <img src={product.image.url} alt={product.name} />
+                  <CartItemContent>
+                    <Typography fontSize={20}>{product.name}</Typography>
+                    <Typography>${product.price}</Typography>
+                    <Amount>
+                      <div className="less">-</div>
+                      <div>5</div>
+                      <div className="more">+</div>
+                    </Amount>
+                  </CartItemContent>
+                </CartItem>
+              ))}
+            </CartList>
+          )}
         </GridArea>
       </ContentLayout>
     </Layout>
