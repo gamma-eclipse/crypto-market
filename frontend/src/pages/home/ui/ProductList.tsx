@@ -1,10 +1,10 @@
 import { styled } from '@mui/material';
 import { ProductCard } from 'entities/product';
 import { AddToCart } from 'features/AddToCart';
-import { ProductView } from 'shared/types';
+import { IProductView } from 'shared/types';
 
 type ProductListProps = {
-  products: ProductView[];
+  products: IProductView[];
 };
 
 export const Wrapper = styled('div')`

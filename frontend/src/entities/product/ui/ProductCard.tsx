@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from 'shared/config/routes';
-import { ProductView } from 'shared/types';
+import { IProductView } from 'shared/types';
 
 import { Description, Price, Title, Wrapper } from './styles';
 
 type ProductCardProps = {
-  product: ProductView;
+  product: IProductView;
   btns?: ReactNode[];
 };
 

@@ -1,9 +1,9 @@
-import { ProductView } from 'shared/types';
+import { IProductView } from 'shared/types';
 
 const MINECRAFT_GRASS_IMAGE_URL =
   'https://w7.pngwing.com/pngs/456/94/png-transparent-minecraft-pocket-edition-computer-icons-desktop-block-angle-video-game-grass.png';
 
-export const productViewsMock: ProductView[] = [
+export const productViewsMock: IProductView[] = [
   {
     id: '5',
     name: 'golden helmet',

@@ -1,17 +1,17 @@
 import { createEffect, createEvent, createStore, sample } from 'effector';
 import { mockFetch } from 'shared/helpers';
 import { productViewsMock } from 'shared/mocks/productsViewsMock';
-import { ProductView } from 'shared/types';
+import { IProductView } from 'shared/types';
 
 export const fetchProducts = createEvent();
-export const fetchProductsFx = createEffect<void, ProductView[]>();
+export const fetchProductsFx = createEffect<void, IProductView[]>();
 
 fetchProductsFx.use(async () => {
   const data = await mockFetch(productViewsMock, 800);
   return data;
 });
 
-export const $catalogProducts = createStore<ProductView[]>([]);
+export const $catalogProducts = createStore<IProductView[]>([]);
 
 $catalogProducts.on(fetchProductsFx.doneData, (_, payload) => payload);
 
