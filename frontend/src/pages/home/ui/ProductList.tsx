@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
 import { ProductCard } from 'entities/product';
-import { AddToCart } from 'features/AddToCart';
+import { AddToCart } from 'features/AddToCart/AddToCart';
 import { IProductView } from 'shared/types';
 
 type ProductListProps = {

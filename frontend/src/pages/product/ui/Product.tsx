@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import { useUnit } from 'effector-react';
 import { Enchantment } from 'entities/product';
-import { AddToCart } from 'features/AddToCart';
+import { AddToCart } from 'features/AddToCart/AddToCart';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { GridArea } from 'shared/ui/GridArea';
