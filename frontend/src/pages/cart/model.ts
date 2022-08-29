@@ -3,20 +3,23 @@ import { mockFetch } from 'shared/helpers';
 import { productViewsMock } from 'shared/mocks/productsViewsMock';
 import { IProductView } from 'shared/types';
 
-export const fetchProducts = createEvent();
-export const fetchProductsFx = createEffect<void, IProductView[]>();
+// fetch by user id
+export const fetchProducts = createEvent<string>();
+export const fetchProductsFx = createEffect<string, IProductView[]>();
 
-fetchProductsFx.use(async () => {
+export const $products = createStore<IProductView[]>([]);
+
+fetchProductsFx.use(async (userId) => {
   const data = await mockFetch(productViewsMock, 800);
   return data;
 });
-
-export const $catalogProducts = createStore<IProductView[]>([]);
-
-$catalogProducts.on(fetchProductsFx.doneData, (_, payload) => payload);
 
 sample({
   clock: fetchProducts,
   filter: fetchProductsFx.pending.map((is) => !is),
   target: fetchProductsFx,
 });
+
+$products.on(fetchProductsFx.doneData, (_, payload) => payload);
+
+fetchProductsFx.doneData.watch(console.log);
