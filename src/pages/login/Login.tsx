@@ -1,9 +1,11 @@
 import { TextField, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { ActionArea, ActionBtn, ContentLayout, ExtraArea, LoginCard, LoginLayout } from './styles';
 
 export const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <ContentLayout>
       <LoginCard>
@@ -12,7 +14,7 @@ export const Login = () => {
           <TextField variant="outlined" fullWidth label="Username" />
           <TextField variant="outlined" fullWidth label="Password" type="password" />
           <ActionArea>
-            <ActionBtn variant="contained" color="secondary">
+            <ActionBtn variant="contained" color="secondary" onClick={() => navigate(-1)}>
               Go back
             </ActionBtn>
             <ActionBtn variant="contained">Go in</ActionBtn>
