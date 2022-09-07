@@ -1,3 +1,7 @@
+export type IViewer = {
+  token: string;
+};
+
 export type ICategory = 'block' | 'weapon' | 'armor';
 export type IRarity = 1 | 2 | 3 | 4 | 5;
 

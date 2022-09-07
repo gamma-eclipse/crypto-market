@@ -6,7 +6,7 @@ export const ContentLayout = styled('div')`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: ${COLORS.bg[200]};
+  background-color: ${COLORS.bg[100]};
 `;
 
 export const LoginCard = styled(Card)`
